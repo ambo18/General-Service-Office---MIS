@@ -1,8 +1,8 @@
 (Done)*Include where can the user/view the requested supplies.
 (Done)*Unit Value- Currency Format
 *Format on Issuance of Property, Report Generator to be used.
-*Separate consumable items like bondpaper, ink.
-*Kapag mag request nga dapat didto pala ma identify na kun duha nga items it ig request dapat ma error, masiring nga exceed an available nga items.
+(Done)*Separate consumable items like bondpaper, ink.
+(Done)*Kapag mag request nga dapat didto pala ma identify na kun duha nga items it ig request dapat ma error, masiring nga exceed an available nga items.
 *If it is already approved the request dapat issuehan hin MR form an MR dapat hingangadto ha usa nga storage.
 * Pag bondpaper diretso la release, dire na hihimuan hin MR Form hingangadto la dapat hiya ha consumable items an Equipment & properties la it dapat mayda MR.
 • Dapat mayda status kun naihatag na, narecive or kun working or processing pala.

@@ -76,11 +76,9 @@
     });
 </script>
 
-<h1 class="page-header">LIST OF EQUIPMENT & PROPERTIES
-    <button style="float:right" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-        <i class="glyphicon glyphicon-plus"></i> New Entry
-    </button>
-</h1>
+<button style="float:right" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+    <i class="glyphicon glyphicon-plus"></i> New Entry
+</button>
 
 <!-- New Entry Modal -->
 <div class="modal fade" id="myModal" role="dialog">
@@ -196,7 +194,6 @@
 </div>
 
 <!-- Update Modal -->
-<!-- Update Modal -->
 <div class="modal fade" id="updateModal" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -282,13 +279,15 @@
     </div>
 </div>
 
+<h1 class="page-header">EQUIPMENTS</h1>
+
 <div class="col-md-12">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Property, Plant, and Equipment List</h3>
+            <h3 class="panel-title">List of Equipments</h3>
         </div>
         <div class="panel-body">
-            <table id="students" class="table table-bordered table-condensed">
+            <table id="equipments" class="table table-bordered table-condensed">
                 <!-- Table header -->
                 <thead>
                     <tr id="heads">
@@ -305,7 +304,60 @@
                 <tbody>
                     <?php
                     include 'db.php';
-                    $sql=  mysqli_query($conn, "SELECT * FROM equip_pro JOIN program ON equip_pro.PROGRAM_ID = program.PROGRAM_ID");
+                    $sql=  mysqli_query($conn, "SELECT * FROM equip_pro JOIN program ON equip_pro.PROGRAM_ID = program.PROGRAM_ID WHERE TYPE='Equipment'");
+                    while($row = mysqli_fetch_assoc($sql)) {
+                        $sid = $row['ID'];
+                    ?>
+                    <tr>
+                    <td style="text-align:center"><?php echo $row['ID']; ?></td>
+                    <td><?php echo $row['EQUIP_QUANTITY']. ' ' . $row['UNIT']; ?></td>   
+                    <td style="text-align:center"><?php echo $row['EQUIP_TYPE']; ?></td>
+                    <td style="text-align:center"><?php echo $row['ARTICLE']; ?></td>
+                    <td><?php echo $row['EQUIP_DESCRIPTION']; ?></td>
+                    <td style="text-align:center"><?php echo $row['PROPERTY_NO']; ?></td>
+                    <td style="text-align:center"><?php echo $row['COST']; ?></td>
+                
+                    <td style="text-align:center"> 
+                    <a  class="btn btn-info" data-toggle="modal" data-target="#view-modal" data-id="<?php echo $sid; ?>" id="getUser">View</a>
+                    <a  class="btn btn-info" data-toggle="modal" data-target="#updateModal" data-id="<?php echo $sid; ?>" id="updateButton">Update</a>
+                    </td>
+                    </tr>
+                    <?php
+                    }
+                    mysqli_close($conn);
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h1 class="page-header">Supplies</h1>
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">List of Supplies</h3>
+        </div>
+        <div class="panel-body">
+            <table id="supplies" class="table table-bordered table-condensed">
+                <!-- Table header -->
+                <thead>
+                    <tr id="heads">
+                        <th style="width:5%;text-align:center">ID</th>
+                        <th style="width:5%;text-align:center">UNIT OF MEASURE</th>
+                        <th style="width:15%;text-align:center">TYPE OF PROPERTY/EQUIPMENT</th>
+                        <th style="width:15%;text-align:center">ARTICLE</th>
+                        <th style="width:30%;text-align:center">DESCRIPTION</th>
+                        <th style="width:25%;text-align:center">PROPERTY NUMBER</th>
+                        <th style="width:25%;text-align:center">UNIT VALUE</th>
+                        <th style="width:10%">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    include 'db.php';
+                    $sql=  mysqli_query($conn, "SELECT * FROM equip_pro JOIN program ON equip_pro.PROGRAM_ID = program.PROGRAM_ID WHERE TYPE='Supply'");
                     while($row = mysqli_fetch_assoc($sql)) {
                         $sid = $row['ID'];
                     ?>
@@ -352,7 +404,10 @@
 
 <script type="text/javascript">
     $(function() {
-        $("#students").dataTable(
+        $("#equipments").dataTable(
+            { "aaSorting": [[ 2, "asc" ]] }
+        );
+        $("#supplies").dataTable(
             { "aaSorting": [[ 2, "asc" ]] }
         );
     });
