@@ -9,5 +9,5 @@
 • Ha requisition details under hiton dapat separate la it requisition details for supplies and requisition details for Equipment.
 (Done)• Ngada ha Dashboard an  Property Type dapatig identify kun ano nga property it available. Ig detailed kun ano nga Property type, kun ano nga equipment it available.
 (Done)• Ngada ha Dashboard dapat ma identify kun pera it available nga bondpaper, ink or mga properties and equipment.
-• Ngada ha Dashboard separate it Equipment and Supplies.
+(Done)• Ngada ha Dashboard separate it Equipment and Supplies.
 (Done)• Dapat tanggalon an title nga LGU GEN. MACARTHUR E. SAMAR it nakabutang la is SUPPLY AND PROPERTY MANAGEMENT INFORMATION SYSTEM OF GSO tas it logo dapat an kanan GSO la.

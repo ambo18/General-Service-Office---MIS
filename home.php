@@ -17,6 +17,14 @@ $get_products1 = "SELECT * FROM program";
 $run_products1 = mysqli_query($conn, $get_products1);
 $count_products1 = mysqli_num_rows($run_products1);
 
+$supply = "SELECT * FROM program WHERE TYPE='Supply'";
+$get_supply = mysqli_query($conn, $supply);
+$total_supply = mysqli_num_rows($get_supply);
+
+$equipment = "SELECT * FROM program WHERE TYPE='Equipment'";
+$get_equipment = mysqli_query($conn, $equipment);
+$total_equipment= mysqli_num_rows($get_equipment);
+
 $get_products2 = "SELECT * FROM request";
 $run_products2 = mysqli_query($conn, $get_products2);
 $count_products2 = mysqli_num_rows($run_products2);
@@ -27,9 +35,10 @@ $count_products3 = mysqli_num_rows($run_products3);
 ?>
 
 <div class="container">
-    <h2 class="page-header"><b>SUPPLY AND PROPERTY MANAGEMENT INFORMATION SYSTEM OF GSO</b></h2>
+    <h3 class="page-header"><b>SUPPLY AND PROPERTY MANAGEMENT INFORMATION SYSTEM OF GSO</b></h3>
 
     <div class="row">
+
         <!-- Equipments & Properties Panel -->
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-primary">
@@ -54,7 +63,57 @@ $count_products3 = mysqli_num_rows($run_products3);
             </div>
         </div>
 
-        <!-- Property Type Panel -->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <i class="fa fa-list-alt fa-3x"></i>
+                        </div>
+                        <div class="col-xs-10 text-right">
+                            <div class="huge"> <?php echo $total_supply; ?> </div>
+                            <div>Supplies</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="rms.php?page=program">
+                    <div class="panel-footer">
+                        <span class="pull-left"> View Details </span>
+                        <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+		<div class="col-lg-3 col-md-6">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <i class="fa fa-list-alt fa-3x"></i>
+                        </div>
+                        <div class="col-xs-10 text-right">
+                            <div class="huge"> <?php echo $total_equipment; ?> </div>
+                            <div>Equipments</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="rms.php?page=program">
+                    <div class="panel-footer">
+                        <span class="pull-left"> View Details </span>
+                        <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+		
+    </div>
+
+	<div class="row">
+
+		<!-- Property Type Panel -->
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-success">
                 <div class="panel-heading">
@@ -125,8 +184,8 @@ $count_products3 = mysqli_num_rows($run_products3);
                 </a>
             </div>
         </div>
-		
-    </div>
+
+	</div>
 
 	<div class="row panel panel-success">
         <div class="col-lg-12">
