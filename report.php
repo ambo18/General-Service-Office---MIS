@@ -18,7 +18,7 @@
                 <table id="equipment" class="table table-bordered text-center">
                     <thead>
                         <tr id="heads">
-                            <th style="width:3%">ID</th>
+                            <th style="width:3%;">ID</th>
                             <th style="width:4%">Quantity</th>
                             <th style="width:8%">Article</th>
                             <th style="width:15%">Name & Office</th>
@@ -103,11 +103,7 @@
                                 <td><?php echo $row['QUANTITY'] . ' ' . $row['UNIT']; ?></td>
                                 <td><?php echo $row['ARTICLE']; ?></td>
                                 <td><?php echo $row['NAME'] . ' - ' . $row['DETAILS']; ?></td>
-                                <td>
-                                    <a class="btn btn-info" onclick='window.open("pdf_solo.php?id=<?php echo $row['MR_ID'] ?>")'>
-                                        <i class="fa fa-fw fa-print"></i>Print MR
-                                    </a>
-                                </td>
+                                <td id="released">Released</td>
                             </tr>
                         <?php
                         }
@@ -134,3 +130,12 @@
         });
     });
 </script>
+
+<style>
+    th {
+        text-align: center;
+    }
+    #released {
+        background-color: #F5F5F5;
+    }
+</style>
