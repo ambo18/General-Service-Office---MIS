@@ -6,7 +6,7 @@
 *If it is already approved the request dapat issuehan hin MR form an MR dapat hingangadto ha usa nga storage.
 * Pag bondpaper diretso la release, dire na hihimuan hin MR Form hingangadto la dapat hiya ha consumable items an Equipment & properties la it dapat mayda MR.
 • Dapat mayda status kun naihatag na, narecive or kun working or processing pala.
-• Ha requisition details under hiton dapat separate la it requisition details for supplies and requisition details for Equipment.
+(Done)• Ha requisition details under hiton dapat separate la it requisition details for supplies and requisition details for Equipment.
 (Done)• Ngada ha Dashboard an  Property Type dapatig identify kun ano nga property it available. Ig detailed kun ano nga Property type, kun ano nga equipment it available.
 (Done)• Ngada ha Dashboard dapat ma identify kun pera it available nga bondpaper, ink or mga properties and equipment.
 (Done)• Ngada ha Dashboard separate it Equipment and Supplies.
