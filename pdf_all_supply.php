@@ -155,7 +155,7 @@ $user = $_SESSION['ID'];
 $pdf = new PDF();
 $pdf->AddPage();
 // First table: output all columns
-$pdf->Table($conn,"SELECT material_requisition.QUANTITY,equip_pro.ARTICLE,material_requisition.NAME,material_requisition.DETAILS FROM material_requisition JOIN equip_pro ON equip_pro.ID = material_requisition.EQUIP_ID JOIN program ON program.PROGRAM_ID = equip_pro.PROGRAM_ID WHERE program.TYPE = 'Equipment'");
+$pdf->Table($conn,"SELECT material_requisition.QUANTITY,equip_pro.ARTICLE,material_requisition.NAME,material_requisition.DETAILS FROM material_requisition JOIN equip_pro ON equip_pro.ID = material_requisition.EQUIP_ID JOIN program ON program.PROGRAM_ID = equip_pro.PROGRAM_ID WHERE program.TYPE = 'Supply'");
 $pdf->AddPage();
 // Second table: specify 3 columns
 $pdf->AddCol('rank',20,'','C');

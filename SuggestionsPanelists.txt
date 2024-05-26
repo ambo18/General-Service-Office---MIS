@@ -1,5 +1,5 @@
-*Include where can the user/view the requested supplies.
-*Unit Value- Currency Format
+(Done)*Include where can the user/view the requested supplies.
+(Done)*Unit Value- Currency Format
 *Format on Issuance of Property, Report Generator to be used.
 *Separate consumable items like bondpaper, ink.
 *Kapag mag request nga dapat didto pala ma identify na kun duha nga items it ig request dapat ma error, masiring nga exceed an available nga items.

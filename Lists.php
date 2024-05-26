@@ -1,5 +1,15 @@
 <?php include 'newstudent.php'; ?>
 
+<style>
+    #getUser  {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+    #updateButton  {
+        width: 100px;
+    }
+</style>
+    
 <script>
     $(document).ready(function(){
         $(document).on('click', '#getUser', function(e){
@@ -309,7 +319,7 @@
                     <td style="text-align:center"><?php echo $row['COST']; ?></td>
                 
                     <td style="text-align:center"> 
-                    <a  class="btn btn-info" data-toggle="modal" data-target="#view-modal" data-id="<?php echo $sid; ?>" id="getUser">View Profile</a>
+                    <a  class="btn btn-info" data-toggle="modal" data-target="#view-modal" data-id="<?php echo $sid; ?>" id="getUser">View</a>
                     <a  class="btn btn-info" data-toggle="modal" data-target="#updateModal" data-id="<?php echo $sid; ?>" id="updateButton">Update</a>
                     </td>
                     </tr>
