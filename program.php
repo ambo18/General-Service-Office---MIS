@@ -37,8 +37,8 @@ success:function(data)
   <table id="students" class="table table-hover table-bordered">
     <thead>
       <tr id="heads">
-        <th></th>
         <th style="width:10%">Type of Equipment</th>
+        <th>Type</th>
         <th style="width:30%">Description</th>
         <th style="width:20%">Action</th>
       </tr>
@@ -53,8 +53,8 @@ success:function(data)
     ?>
     <form class="" method="post" >
       <tr>
-        <td style="width:10%"><?php echo $row['PROGRAM_ID'] ?></td>
         <td style="width:10%"><?php echo $row['EQUIP_TYPE'] ?></td>
+        <td style="width:10%"><?php echo $row['TYPE'] ?></td>
         <td style="width:10%"><?php echo $row['DESCRIPTION'] ?></td>
         <td style="width:10%"><center><a href="delete_equiptype.php?id=<?php echo $row['PROGRAM_ID'] ?>" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></center></td>
       </tr>
@@ -87,6 +87,22 @@ success:function(data)
                   <p>
             <?php if(isset($errors['cur'])){echo "<br><br><div class='erlert'><h5>" .$errors['cur']. "</h5></div>"; } ?>
             </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="type" class="cols-sm-2 control-label">Type</label>
+              <div class="cols-sm-4">
+                <div class="input-group">
+                  <select class="form-control" name="type" id="type" style="width:225px;height:50px">
+                    <option value="">Select Type</option>
+                    <option value="Supply" <?php if(isset($_POST['type']) && $_POST['type'] == 'Supply'){echo 'selected';} ?>>Supply</option>
+                    <option value="Equipment" <?php if(isset($_POST['type']) && $_POST['type'] == 'Equipment'){echo 'selected';} ?>>Equipment</option>
+                  </select>
+                  <p>
+                    <?php if(isset($errors['type'])){echo "<br><br><br><div class='erlert'><h5>" .$errors['type']. "</h5></div>"; } ?>
+                  </p>
                 </div>
               </div>
             </div>
