@@ -187,8 +187,8 @@ $count_products3 = mysqli_num_rows($run_products3);
 
 	</div>
 
-	<div class="row panel panel-success">
-        <div class="col-lg-12">
+	<div class="row">
+        <div class="col-lg-9">
             <h3 class="page-header">Property Type</h3>
             <table class="table table-bordered table-hover">
                 <thead>
@@ -211,8 +211,8 @@ $count_products3 = mysqli_num_rows($run_products3);
         </div>
     </div>
 
-    <div class="row panel panel-success">
-        <div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-9">
             <h3 class="page-header">Equipments & Properties Details</h3>
             <table class="table table-bordered table-hover">
                 <thead>

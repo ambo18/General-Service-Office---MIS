@@ -54,7 +54,7 @@
 <div class="container-fluid">
 <center><img src="chmsc.png"></center>
   <div class="login-form" id="login_modal" role="dialog" >
-<center><h2><p class="text-center">GENERAL SERVICES OFFICE - SUPPLY AND PROPERTY MANAGEMENT INFORMATION SYSTEM OF THE LOCAL GOVERNMENT UNIT OF GEN. MACARTHUR, EASTERN SAMAR</p></h2></center>
+<center><h2><p class="text-center">SUPPLY AND PROPERTY MANAGEMENT INFORMATION SYSTEM OF GSO</p></h2></center>
 
   <form class="form-horizontal" method="post">
     <div class="form-group">
