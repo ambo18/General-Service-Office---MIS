@@ -13,8 +13,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 
 
-				$sql_insert = mysqli_query($conn, "INSERT into request(EQUIP_ID,REQUEST_QUANTITY,NAME,CONTACT,OFFICE) 
-				VALUES ('$id','$quantity','$name','$contact','$department')");
+				$sql_insert = mysqli_query($conn, "INSERT into request(EQUIP_ID,REQUEST_QUANTITY,NAME,CONTACT,OFFICE,STATUS) 
+				VALUES ('$id','$quantity','$name','$contact','$department','PENDING')");
 				if ($sql_insert) {
 					mysqli_query($conn, "INSERT into history_log (transaction,user_id,date_added) 
 				VALUES ('added $name as new requester','$user',NOW() )");
