@@ -40,7 +40,7 @@
                             <h4><b>Request Details </b></h4>
                         </div>
 
-                        <div class="col-md-12">
+                        <div styles>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">List of Material Availability</h3>
@@ -50,11 +50,11 @@
                                         <thead>
                                             <tr id="heads">
                                                 <th style="width:5%;text-align:center">ARTICLE</th>
-                                                <th style="width:15%;text-align:center">DESCRIPTION</th>
-                                                <th style="width:5%;text-align:center">QUANTITY</th>
+                                                <th style="width:1%;text-align:center">QUANTITY</th>
                                                 <th style="width:15%;text-align:center">NAME</th>
                                                 <th style="width:15%;text-align:center">CONTACT</th>
                                                 <th style="width:15%;text-align:center">DEPARTMENT</th>
+                                                <th style="width:15%;text-align:center">STATUS</th>
                                                 <th style="width:10%">ACTION</th>
                                             </tr>
                                         </thead>
@@ -69,11 +69,11 @@
                                             ?>
                                                 <tr>
                                                     <td style="text-align:center"><?php echo $row['ARTICLE']; ?></td>
-                                                    <td style="text-align:center"><?php echo $row['EQUIP_DESCRIPTION']; ?></td>
                                                     <td style="text-align:center"><?php echo $row['REQUEST_QUANTITY']; ?></td>
                                                     <td style="text-align:center"><?php echo $row['NAME']; ?></td>
                                                     <td style="text-align:center"><?php echo $row['CONTACT']; ?></td>
                                                     <td style="text-align:center"><?php echo $row['OFFICE']; ?></td>
+                                                    <td style="text-align:center"><?php echo $row['STATUS']; ?></td>
                                                     <td style="text-align:center">
                                                         <?php 
                                                         if ($row['AVAILABILITY'] == 'OUT OF STOCK/UNAVAILABLE') {
