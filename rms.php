@@ -84,10 +84,8 @@
             $row = mysqli_fetch_assoc($sql);
             if($row['USER_TYPE'] == 'ADMINISTRATOR'){
                 include 'sidebar.php';
-            }elseif($row['USER_TYPE'] == 'STAFF'){
-                include 'sidebar_staff.php';
             }else{
-              include 'sidebar_borrower.php';
+              include 'sidebar_staff.php';
             }
             ?>
             </div>
