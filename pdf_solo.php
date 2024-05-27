@@ -173,14 +173,15 @@ class PDF extends FPDF
         $this->Ln(5);
 
         $this->SetFont('Arial', 'U', 12); 
+        $this->SetX(35);
         $this->Cell(90, 10, 'ROSE ABOGADIE', 0, 0, 'L');
         $this->Cell(0, 10, 'JESSA M. GERMONES', 0, 1, 'R');
         $this->SetFont('Arial', '', 12);
 
-        $this->SetX(20);
+        $this->SetX(43);
         $this->Cell(90, 10, 'Supervisor', 0, 0, 'L');
 
-        $this->SetX(165);
+        $this->SetX(168);
         $this->Cell(0, 10, 'Manager', 0, 1, 'L');
     }
 
