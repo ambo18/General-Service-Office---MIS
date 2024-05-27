@@ -118,7 +118,6 @@ success:function(data)
         <option></option>
           <option value="ADMINISTRATOR">ADMINISTRATOR</option>
           <option value="STAFF">STAFF</option>
-          <option value="BORROWER">BORROWER</option>
         </select>                </div>
               </div>
             </div>
