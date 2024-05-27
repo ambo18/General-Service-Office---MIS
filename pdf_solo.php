@@ -144,8 +144,9 @@ class PDF extends FPDF
         // LGU and PAR No.
         $this->SetFont('Arial', '', 12);
         $this->Cell(30, 10, 'LGU: GEN. MACARTHUR', 0, 0);
-        $this->Cell(0, 10, 'PAR NO.: __________', 0, 1, 'R');
+        $this->Cell(0, 10, '', 0, 1, 'R');
         $this->Cell(30, 10, 'Food: __________', 0, 0);
+        $this->Cell(0, 10, 'PAR NO.: __________', 0, 1, 'R');
 
         $this->Ln(10);
         // Column headers
@@ -162,18 +163,25 @@ class PDF extends FPDF
     function Footer()
     {
         // Position at 1.5 cm from bottom
-        $this->SetY(-50);
+        $this->SetY(-80);
         // Approvers
         $this->SetFont('Arial', '', 12);
-        $this->Cell(0, 10, 'Received by:', 0, 1, 'L');
-        $this->Cell(0, 10, 'Approved by:', 0, 1, 'R');
+        $this->Cell(0, 10, 'Received by:', 0, 0, 'L');
+
+        $this->SetX(125);
+        $this->Cell(0, 10, 'Approved by:', 0, 1, 'L');
         $this->Ln(5);
 
+        $this->SetFont('Arial', 'U', 12); 
         $this->Cell(90, 10, 'ROSE ABOGADIE', 0, 0, 'L');
         $this->Cell(0, 10, 'JESSA M. GERMONES', 0, 1, 'R');
+        $this->SetFont('Arial', '', 12);
 
+        $this->SetX(20);
         $this->Cell(90, 10, 'Supervisor', 0, 0, 'L');
-        $this->Cell(0, 10, 'Supervisor', 0, 1, 'R');
+
+        $this->SetX(165);
+        $this->Cell(0, 10, 'Manager', 0, 1, 'L');
     }
 
     function TableData($conn, $id)
