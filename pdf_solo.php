@@ -132,21 +132,77 @@ function Table($link, $query, $prop=array())
 ?>
 <?php 
 
-
-
-class PDF extends PDF_MySQL_Table
+class PDF extends FPDF
 {
-function Header()
-{
-    // Title
-    $this->SetFont('Arial','',18);
-    $this->Cell(0,6,'Individual Details',0,1,'C');
-    $this->Ln(10);
-    // Ensure table header is printed
-    parent::Header();
-}
+    function Header()
+    {
+        // Title
+        $this->SetFont('Arial', 'B', 16);
+        $this->Cell(0, 10, 'PROPERTY ACKNOWLEDGEMENT RECEIPT', 0, 1, 'C');
+        $this->Ln(5);
+
+        // LGU and PAR No.
+        $this->SetFont('Arial', '', 12);
+        $this->Cell(30, 10, 'LGU: GEN. MACARTHUR', 0, 0);
+        $this->Cell(0, 10, 'PAR NO.: __________', 0, 1, 'R');
+        $this->Cell(30, 10, 'Food: __________', 0, 0);
+
+        $this->Ln(10);
+        // Column headers
+        $this->SetFont('Arial', 'B', 12);
+        $this->Cell(20, 10, 'Quantity', 1);
+        $this->Cell(20, 10, 'Unit', 1);
+        $this->Cell(40, 10, 'Description', 1);
+        $this->Cell(40, 10, 'Property Number', 1);
+        $this->Cell(40, 10, 'Date Acquired', 1);
+        $this->Cell(30, 10, 'Amount', 1);
+        $this->Ln();
+    }
+
+    function Footer()
+    {
+        // Position at 1.5 cm from bottom
+        $this->SetY(-50);
+        // Approvers
+        $this->SetFont('Arial', '', 12);
+        $this->Cell(0, 10, 'Received by:', 0, 1, 'L');
+        $this->Cell(0, 10, 'Approved by:', 0, 1, 'R');
+        $this->Ln(5);
+
+        $this->Cell(90, 10, 'ROSE ABOGADIE', 0, 0, 'L');
+        $this->Cell(0, 10, 'JESSA M. GERMONES', 0, 1, 'R');
+
+        $this->Cell(90, 10, 'Supervisor', 0, 0, 'L');
+        $this->Cell(0, 10, 'Supervisor', 0, 1, 'R');
+    }
+
+    function TableData($conn, $id)
+    {
+        $this->SetFont('Arial', '', 12);
+        $query = "SELECT material_requisition.QUANTITY, equip_pro.UNIT, equip_pro.EQUIP_DESCRIPTION, equip_pro.PROPERTY_NO, material_requisition.MR_DATE, equip_pro.COST
+                  FROM material_requisition 
+                  JOIN equip_pro ON equip_pro.ID = material_requisition.EQUIP_ID 
+                  WHERE material_requisition.MR_ID = '$id'";
+
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $this->Cell(20, 10, $row['QUANTITY'], 1);
+                $this->Cell(20, 10, $row['UNIT'], 1);
+                $this->Cell(40, 10, $row['EQUIP_DESCRIPTION'], 1);
+                $this->Cell(40, 10, $row['PROPERTY_NO'], 1);
+                $this->Cell(40, 10, $row['MR_DATE'], 1);
+                $this->Cell(30, 10, $row['COST'], 1);
+                $this->Ln();
+            }
+        } else {
+            $this->Cell(0, 10, 'No data found', 1, 1, 'C');
+        }
+    }
 }
 
+// Database connection
 include 'db.php';
 session_start();
 $user = $_SESSION['ID'];
@@ -154,19 +210,6 @@ $id = $_GET['id'];
 
 $pdf = new PDF();
 $pdf->AddPage();
-// First table: output all columns
-$pdf->Table($conn,"SELECT material_requisition.QUANTITY,equip_pro.ARTICLE,material_requisition.NAME,material_requisition.DETAILS From material_requisition join equip_pro on equip_pro.ID=material_requisition.EQUIP_ID WHERE material_requisition.MR_ID= '$id' ");
-$pdf->AddPage();
-// Second table: specify 3 columns
-$pdf->AddCol('rank',20,'','C');
-$pdf->AddCol('name',40,'Country');
-$pdf->AddCol('pop',40,'Pop (2001)','C');
-$prop = array('HeaderColor'=>array(255,150,100),
-            'color1'=>array(210,245,255),
-            'color2'=>array(255,255,210),
-            'padding'=>2);
-
+$pdf->TableData($conn, $id);
 $pdf->Output();
-
-
 ?>
