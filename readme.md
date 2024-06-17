@@ -7,7 +7,6 @@ This project is the "General Service Office Management Information System" (MIS)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
