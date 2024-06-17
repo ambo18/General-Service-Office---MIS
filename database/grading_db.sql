@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2024 at 04:06 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.2.34
+-- Generation Time: Jun 13, 2024 at 03:23 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,18 +37,19 @@ CREATE TABLE `equip_pro` (
   `PROPERTY_NO` varchar(100) NOT NULL,
   `AVAILABILITY` varchar(60) NOT NULL,
   `COST` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `equip_pro`
 --
 
 INSERT INTO `equip_pro` (`ID`, `PROGRAM_ID`, `EQUIP_QUANTITY`, `UNIT`, `ARTICLE`, `EQUIP_DESCRIPTION`, `PROPERTY_NO`, `AVAILABILITY`, `COST`) VALUES
-(1, 6, 2, 'pieces', '2 way-radio', 'sdf', '2012-75', 'OUT OF STOCK/UNAVAILABLE', '75'),
+(1, 6, 1000, 'pieces', 'Paper paper one', 'sdf', '2012-75', '499', '75'),
 (2, 6, 2, 'UNITS', 'cELLPHONE', 'NOKIA 3315', '2023-CP-890', 'OUT OF STOCK/UNAVAILABLE', '8990'),
-(3, 7, 5, 'Unit', 'Isuzu 4x4', '6 cylinders disel engine, 10 wheels, chassis #89687698', '2023-11-321385', 'OUT OF STOCK/UNAVAILABLE', '1400000'),
-(4, 8, 105, 'reams', 'Paper One', 'Plain bond paper', '2023-11-168413', '92', '250'),
-(5, 7, 2, 'Unit', 'Mitsubishi Lancer 2X4', 'Four Wheel vehicle for DRR', '2024-01-VH01', '2', '1,214,000.00');
+(3, 7, 5, 'Unit', 'Isuzu 4x4', 'Description', '2023-11-321385', 'OUT OF STOCK/UNAVAILABLE', '1400000'),
+(4, 8, 105, 'reams', 'Paper One', 'Plain bond paper', '2023-11-168413', '70', '250'),
+(5, 7, 2, 'Unit', 'Mitsubishi Lancer 2X4', 'Four Wheel vehicle for DRR', '2024-01-VH01', '2', '1,214,000.00'),
+(6, 9, 1000, 'pieces', 'Paper', 'Bond paper', '1234', '1000', '5000');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,7 @@ CREATE TABLE `grade` (
   `grade_id` int(10) NOT NULL,
   `grade` varchar(10) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `grade`
@@ -83,7 +84,7 @@ CREATE TABLE `history_log` (
   `transaction` varchar(255) NOT NULL,
   `user_id` int(5) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `history_log`
@@ -181,7 +182,48 @@ INSERT INTO `history_log` (`log_id`, `transaction`, `user_id`, `date_added`) VAL
 (449, 'logged in', 0, '2024-01-13 10:03:02'),
 (450, 'logged out', 0, '2024-01-13 10:03:44'),
 (451, 'logged in', 1, '2024-01-13 10:03:51'),
-(452, 'logged out', 1, '2024-01-13 10:04:32');
+(452, 'logged out', 1, '2024-01-13 10:04:32'),
+(453, 'logged in', 1, '2024-03-06 13:26:09'),
+(454, 'logged out', 1, '2024-03-06 13:29:12'),
+(455, 'logged in', 0, '2024-03-06 13:29:20'),
+(456, 'logged out', 0, '2024-03-06 13:29:47'),
+(457, 'logged in', 0, '2024-03-06 13:29:53'),
+(458, 'logged out', 0, '2024-03-06 13:31:18'),
+(459, 'logged in', 1, '2024-03-06 13:31:33'),
+(460, 'logged out', 1, '2024-03-06 13:32:26'),
+(461, 'logged in', 1, '2024-03-08 14:37:59'),
+(462, 'logged out', 1, '2024-03-08 14:38:40'),
+(463, 'logged in', 0, '2024-03-08 14:38:48'),
+(464, 'logged out', 0, '2024-03-08 14:42:58'),
+(465, 'logged in', 1, '2024-03-08 14:43:11'),
+(466, 'logged out', 1, '2024-03-08 14:45:34'),
+(467, 'logged in', 1, '2024-05-26 09:48:02'),
+(468, 'issue order/MR to Dessaryl D. Elgar', 0, '2024-05-26 13:40:55'),
+(469, 'issue order/MR to R-jhel Basijan Tandugon', 1, '2024-05-26 15:02:39'),
+(470, 'issue order/MR to R-jhel Basijan Tandugon', 1, '2024-05-26 15:03:18'),
+(471, 'added Paper as new Property/Equipment', 1, '2024-05-26 15:38:41'),
+(472, 'logged in', 1, '2024-05-26 15:52:04'),
+(473, 'logged out', 1, '2024-05-26 16:08:23'),
+(474, 'logged in', 0, '2024-05-26 16:08:33'),
+(475, 'issue order/MR to Nector P. Gabornes', 0, '2024-05-26 16:18:07'),
+(476, 'logged out', 0, '2024-05-26 16:19:53'),
+(477, 'logged in', 1, '2024-05-26 16:20:08'),
+(478, 'logged out', 1, '2024-05-26 16:20:47'),
+(479, 'logged in', 1, '2024-05-26 16:20:54'),
+(480, 'logged out', 1, '2024-05-26 16:21:04'),
+(481, 'logged in', 1, '2024-05-26 16:21:11'),
+(482, 'logged out', 1, '2024-05-26 16:21:44'),
+(483, 'logged in', 1, '2024-05-26 16:24:09'),
+(484, 'added R-jhel B. Tandugon as new requester', 0, '2024-05-26 16:46:49'),
+(485, 'logged in', 1, '2024-05-26 16:47:33'),
+(486, 'added Joezyl as new requester', 0, '2024-05-26 17:10:52'),
+(487, 'added admin as new requester', 0, '2024-05-26 17:12:34'),
+(488, 'logged in', 1, '2024-05-26 17:14:08'),
+(489, 'logged in', 1, '2024-05-27 14:25:41'),
+(490, 'logged out', 1, '2024-05-27 14:29:35'),
+(491, 'logged in', 1, '2024-05-27 14:32:33'),
+(492, 'logged out', 1, '2024-05-27 20:32:55'),
+(493, 'logged in', 0, '2024-05-27 20:35:47');
 
 -- --------------------------------------------------------
 
@@ -196,7 +238,7 @@ CREATE TABLE `material_requisition` (
   `DETAILS` varchar(255) NOT NULL,
   `MR_DATE` datetime NOT NULL,
   `QUANTITY` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `material_requisition`
@@ -211,7 +253,11 @@ INSERT INTO `material_requisition` (`MR_ID`, `EQUIP_ID`, `NAME`, `DETAILS`, `MR_
 (11, 4, 'Nector P. Gabornes', 'DILG', '2024-01-06 02:17:39', '3'),
 (12, 1, 'Dessaryl D. Elgar', 'Treasurer', '2024-01-06 02:18:01', '1'),
 (13, 4, 'Joezyl Tanquion', 'Health Unit', '2024-01-13 09:44:26', '2'),
-(14, 1, 'Nector P. Gabornes', 'DILG', '2024-01-13 09:49:53', '1');
+(14, 1, 'Nector P. Gabornes', 'DILG', '2024-01-13 09:49:53', '1'),
+(15, 4, 'Dessaryl D. Elgar', 'DILG', '2024-05-26 13:40:55', '2'),
+(16, 4, 'R-jhel Basijan Tandugon', 'COED', '2024-05-26 15:02:39', '12'),
+(17, 4, 'R-jhel Basijan Tandugon', 'Barangay Youth Council', '2024-05-26 15:03:18', '8'),
+(18, 1, 'Nector P. Gabornes', 'Treasurer', '2024-05-26 16:18:07', '1');
 
 -- --------------------------------------------------------
 
@@ -222,17 +268,19 @@ INSERT INTO `material_requisition` (`MR_ID`, `EQUIP_ID`, `NAME`, `DETAILS`, `MR_
 CREATE TABLE `program` (
   `PROGRAM_ID` int(20) NOT NULL,
   `EQUIP_TYPE` varchar(30) NOT NULL,
+  `TYPE` varchar(50) DEFAULT NULL,
   `DESCRIPTION` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `program`
 --
 
-INSERT INTO `program` (`PROGRAM_ID`, `EQUIP_TYPE`, `DESCRIPTION`) VALUES
-(6, 'COM E', 'dfgdfgd'),
-(7, 'Vehicle', 'this is used for transportation.'),
-(8, 'Office Supplies', 'this is used for the processing of offices and departments.');
+INSERT INTO `program` (`PROGRAM_ID`, `EQUIP_TYPE`, `TYPE`, `DESCRIPTION`) VALUES
+(6, 'COM E', 'Equipment', 'dfgdfgd'),
+(7, 'Vehicle', 'Equipment', 'this is used for transportation.'),
+(8, 'Office Supplies', 'Supply', 'this is used for the processing of offices and departments.'),
+(9, 'Bond Paper', 'Supply', 'bond paer');
 
 -- --------------------------------------------------------
 
@@ -244,7 +292,7 @@ CREATE TABLE `promotion_candidates` (
   `id` int(10) NOT NULL,
   `STUDENT_ID` int(10) NOT NULL,
   `SY` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -258,16 +306,19 @@ CREATE TABLE `request` (
   `REQUEST_QUANTITY` varchar(60) NOT NULL,
   `NAME` varchar(100) NOT NULL,
   `CONTACT` varchar(60) NOT NULL,
-  `OFFICE` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `OFFICE` varchar(100) NOT NULL,
+  `STATUS` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `request`
 --
 
-INSERT INTO `request` (`REQUEST_ID`, `EQUIP_ID`, `REQUEST_QUANTITY`, `NAME`, `CONTACT`, `OFFICE`) VALUES
-(7, 4, '2', 'Dessaryl D. Elgar', '09662444960', 'DILG'),
-(8, 1, '1', 'Nector P. Gabornes', '09662444960', 'Treasurer');
+INSERT INTO `request` (`REQUEST_ID`, `EQUIP_ID`, `REQUEST_QUANTITY`, `NAME`, `CONTACT`, `OFFICE`, `STATUS`) VALUES
+(9, 5, '1', 'R-jhel B. Tandugon', '09099475874664', 'CCS', 'PENDING'),
+(10, 6, '500', 'Joezyl', '09097875867', 'CANS', 'PENDING'),
+(11, 1, '200', 'admin', '09097875867', 'Barangay Youth Council', 'PENDING'),
+(12, 1, '200', 'admin', '09097875867', 'Barangay Youth Council', 'PENDING');
 
 -- --------------------------------------------------------
 
@@ -279,7 +330,7 @@ CREATE TABLE `school_year` (
   `SY_ID` int(10) NOT NULL,
   `school_year` varchar(10) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `school_year`
@@ -318,7 +369,7 @@ CREATE TABLE `students` (
   `TOTAL_NO_OF_YEAR` int(5) NOT NULL,
   `PROGRAM` varchar(20) NOT NULL,
   `BIRTH_PLACE` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -333,7 +384,7 @@ CREATE TABLE `user` (
   `USER` varchar(10) NOT NULL,
   `PASSWORD` text NOT NULL,
   `USER_TYPE` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user`
@@ -342,7 +393,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`USER_ID`, `LASTNAME`, `FIRSTNAME`, `USER`, `PASSWORD`, `USER_TYPE`) VALUES
 (1, 'admin', 'admin', 'admin', '0192023a7bbd73250516f069df18b500', 'ADMINISTRATOR'),
 (2, 'staff', 'staff', 'staff', 'de9bf5643eabf80f4a56fda3bbb84483', 'STAFF'),
-(0, 'Joezyl', 'Tanquion', 'staff', '1253208465b1efa876f982d8a9e73eef', 'STAFF');
+(0, 'Joezyl', 'Tanquion', 'staff', '1253208465b1efa876f982d8a9e73eef', 'STAFF'),
+(0, 'Robert', 'Dadula', 'robert123', 'a82762f30c1a27faa4f256b24fcaff24', 'BORROWER');
 
 --
 -- Indexes for dumped tables
@@ -410,7 +462,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `equip_pro`
 --
 ALTER TABLE `equip_pro`
-  MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `grade`
@@ -422,19 +474,19 @@ ALTER TABLE `grade`
 -- AUTO_INCREMENT for table `history_log`
 --
 ALTER TABLE `history_log`
-  MODIFY `log_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
+  MODIFY `log_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=494;
 
 --
 -- AUTO_INCREMENT for table `material_requisition`
 --
 ALTER TABLE `material_requisition`
-  MODIFY `MR_ID` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `MR_ID` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `PROGRAM_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `PROGRAM_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `promotion_candidates`
@@ -446,7 +498,7 @@ ALTER TABLE `promotion_candidates`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `REQUEST_ID` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `REQUEST_ID` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `school_year`

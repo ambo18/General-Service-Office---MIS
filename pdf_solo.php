@@ -145,7 +145,7 @@ class PDF extends FPDF
         $this->SetFont('Arial', '', 12);
         $this->Cell(30, 10, 'LGU: GEN. MACARTHUR', 0, 0);
         $this->Cell(0, 10, '', 0, 1, 'R');
-        $this->Cell(30, 10, 'Food: __________', 0, 0);
+        $this->Cell(30, 10, 'Fund: __________', 0, 0);
         $this->Cell(0, 10, 'PAR NO.: __________', 0, 1, 'R');
 
         $this->Ln(10);
