@@ -145,7 +145,7 @@ class PDF extends PDF_MySQL_Table
         $this->SetFont('Arial', '', 12);
         $this->Cell(30, 10, 'LGU: GEN. MACARTHUR', 0, 0);
         $this->Cell(0, 10, '', 0, 1, 'R');
-        $this->Cell(30, 10, 'Food: __________', 0, 0);
+        $this->Cell(30, 10, 'Fund: __________', 0, 0);
         $this->Cell(0, 10, 'PAR NO.: __________', 0, 1, 'R');
 
         $this->Ln(10);
@@ -168,21 +168,28 @@ class PDF extends PDF_MySQL_Table
         $this->SetFont('Arial', '', 12);
         $this->Cell(0, 10, 'Received by:', 0, 0, 'L');
 
-        $this->SetX(125);
+        $this->SetX(115);
         $this->Cell(0, 10, 'Approved by:', 0, 1, 'L');
         $this->Ln(5);
 
         $this->SetFont('Arial', 'U', 12); 
         $this->SetX(35);
         $this->Cell(90, 10, 'ROSE ABOGADIE', 0, 0, 'L');
-        $this->Cell(0, 10, 'JESSA M. GERMONES', 0, 1, 'R');
+
+        $this->SetX(145);
+        $this->Cell(0, 10, 'JESSA M. GERMONES', 0, 1, 'L');
         $this->SetFont('Arial', '', 12);
 
-        $this->SetX(43);
-        $this->Cell(90, 10, 'Supervisor', 0, 0, 'L');
+        $this->SetX(10);
+        $this->Cell(90, 10, 'Signature over Printed Name of the End User', 0, 0, 'L');
 
-        $this->SetX(168);
-        $this->Cell(0, 10, 'Manager', 0, 1, 'L');
+        $this->SetX(140);
+        $this->Cell(0, 10, 'Signature over Printed Name', 0, 1, 'L');
+        $this->Ln(5);
+
+        $this->SetX(155);
+        $this->SetFont('Arial', 'B', 12);
+        $this->Cell(0, 0, 'Supply Officer l', 0, 0, 'L');
     }
 
     function TableData($conn)
