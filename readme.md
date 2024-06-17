@@ -27,7 +27,7 @@ To set up the project on your local machine, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/GeneralServiceOfficeMIS.git
+    git clone https://github.com/ambo18/General-Service-Office---MIS
     ```
 
 2. **Move the project files to the XAMPP directory:**
