@@ -1,37 +1,86 @@
-Free Download Source Code "General-Service-Office---MIS"
+# General Service Office MIS
 
-FIRST Download
+This project is the "General Service Office Management Information System" (MIS) designed for the inventory management of the General Mac Arthur Eastern Samar Market. The system is implemented using PHP and MySQL and runs on XAMPP.
 
-1.XAMPP
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-2."TEXT EDITOR" NOTEPAD++ OR SUBLIME TEXT 3 / ETC.
+## Features
 
-3"Student_Grading_System"
+- **Generate Reports**: Generate various inventory and management reports.
+- **Print MR Form**: Print Material Requisition forms.
+- **Request Management**: Borrowers can submit requests for materials.
 
-4. Download the zip file/ download winrar
+## Installation
 
-5. Extract the file and copy "Student_Grading_System" folder
+To set up the project on your local machine, follow these steps:
 
-6.Paste inside root directory/ where you install xammp local disk C: drive D: drive E: paste: (for xampp/htdocs, 
+### Prerequisites
 
-7. Open PHPMyAdmin (http://localhost/phpmyadmin)
+- XAMPP (or any other similar local server environment)
 
-8. Create a database with name grading_db
+### Steps
 
-6. Import grading_db.sql file(given inside the zip package in SQL file folder)
+1. **Clone the repository:**
 
-7.Run the script http://localhost/Student_Grading_System
+    ```bash
+    git clone https://github.com/yourusername/GeneralServiceOfficeMIS.git
+    ```
 
+2. **Move the project files to the XAMPP directory:**
 
-**LOGIN DETAILS** 
+    Copy the cloned repository to the `htdocs` directory of your XAMPP installation.
 
-Staff
-user: staff
-pass: staff123
+3. **Start XAMPP:**
 
-Admin
-user: admin
-pass: admin123
+    Open the XAMPP Control Panel and start the Apache and MySQL services.
 
-****** https:1sourcecodr.blogspot.com ******
-Subcribe my You tube Channel **** 1 Source code ****
+4. **Create the database:**
+
+    - Open your browser and go to `http://localhost/phpmyadmin`.
+    - Create a new database, for example, `gsomis`.
+    - Import the database schema from the `database.sql` file located in the project directory.
+
+5. **Access the application:**
+
+    Open your browser and go to `http://localhost/GeneralServiceOfficeMIS`.
+
+## Usage
+
+1. **Login:**
+
+    Use the login page to enter the system. Default credentials can be set in the database if needed.
+
+2. **Dashboard:**
+
+    The dashboard provides an overview of the main features, including the following:
+    - Displays the total number of equipment and supplies.
+    - Lists the specific equipment and supplies.
+    - Shows the total number of requests from borrowers.
+    - Displays the total records in the system.
+
+3. **Reports:**
+
+    Generate and download various reports on inventory status and other relevant data.
+
+4. **Print MR Forms:**
+
+    Print Material Requisition forms for inventory items.
+
+5. **Borrower Requests:**
+
+    Manage requests from borrowers, including approving or denying requests.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
